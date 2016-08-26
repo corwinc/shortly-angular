@@ -2,6 +2,39 @@ angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
   // Your code here
+  // Returns an object or function that can be injected into other components
+  // Useful for sharing data among different controllers
+
+  var getAll = function() {
+    return $http({
+      method: 'GET',
+      url: '/api/links'
+    })
+    .then(function (resp) {
+      return resp.data;
+    });
+  };
+
+  var addOne = function(link) {
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data: link
+    })
+    .then(function (resp) {
+      console.log('addOne resp: ', resp);
+      console.log('addOne resp.data: ', resp.data);
+      console.log('addOne code:', resp.data.code);
+      return resp;
+    });
+  };
+
+  return {
+    getAll: getAll,
+    addOne: addOne
+  };
+
+
 })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!

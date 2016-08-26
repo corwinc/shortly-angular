@@ -1,4 +1,4 @@
-'use strict';
+
 
 describe('Services', function () {
   beforeEach(module('shortly.services'));
