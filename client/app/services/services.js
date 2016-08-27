@@ -22,9 +22,6 @@ angular.module('shortly.services', [])
       data: link
     })
     .then(function (resp) {
-      console.log('addOne resp: ', resp);
-      console.log('addOne resp.data: ', resp.data);
-      console.log('addOne code:', resp.data.code);
       return resp;
     });
   };

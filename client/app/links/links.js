@@ -5,8 +5,11 @@ angular.module('shortly.links', [])
   // Contain logic for link view
   // Configures and manages the $scope object
 
-  // allLinks
-  // newLink
   $scope.data = {};
+
+  Links.getAll()
+  .then(function(data) {
+    $scope.data.links = data;
+  });
 
 });
