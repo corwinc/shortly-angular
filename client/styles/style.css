@@ -29,14 +29,15 @@ h1 {
 
 .navigation li {
   float: left;
-}
+  list-style-type: none;
+  }
 
 .navigation li a {
   width: 100px;
   height: 20px;
   line-height: 20px;
   padding: 10px;
-  display: block;
+  display: block; 
   text-align: center;
 }
 
