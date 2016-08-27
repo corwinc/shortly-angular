@@ -7,20 +7,33 @@ angular.module('shortly', [
 ])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
+    .when('/', {
+      templateUrl: '/client/index.html',
+      controller: 'AuthController'
+    })
     .when('/signin', {
-      templateUrl: 'app/auth/signin.html',
+      templateUrl: '/client/app/auth/signin.html',
       controller: 'AuthController'
     })
     .when('/signup', {
-      templateUrl: 'app/auth/signup.html',
+      templateUrl: '/client/app/auth/signup.html',
       controller: 'AuthController'
+    })
+    .when('/links', {
+      templateUrl: '/client/app/links/links.html',
+      controller: 'LinksController'
+    })
+    .when('/shorten', {
+      templateUrl: '/client/app/shorten/shorten.html',
+      controller: 'ShortenController'
     });
-    // Your code here
+    // .otherwise({ redirectTo: '/'});
 
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
   $httpProvider.interceptors.push('AttachTokens');
 })
+// .controller('AuthController')
 .factory('AttachTokens', function ($window) {
   // this is an $httpInterceptor
   // its job is to stop all out going request
