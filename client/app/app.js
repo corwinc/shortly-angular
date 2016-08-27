@@ -8,23 +8,23 @@ angular.module('shortly', [
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: '/client/index.html',
+      templateUrl: 'index.html',
       controller: 'AuthController'
     })
     .when('/signin', {
-      templateUrl: '/client/app/auth/signin.html',
+      templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
     })
     .when('/signup', {
-      templateUrl: '/client/app/auth/signup.html',
+      templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
     })
     .when('/links', {
-      templateUrl: '/client/app/links/links.html',
+      templateUrl: 'app/links/links.html',
       controller: 'LinksController'
     })
     .when('/shorten', {
-      templateUrl: '/client/app/shorten/shorten.html',
+      templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
     });
     // .otherwise({ redirectTo: '/'});
