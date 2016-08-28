@@ -16,6 +16,7 @@ angular.module('shortly.services', [])
   };
 
   var addOne = function(link) {
+    console.log('inside the addOne function');
     return $http({
       method: 'POST',
       url: '/api/links',
@@ -80,3 +81,27 @@ angular.module('shortly.services', [])
     signout: signout
   };
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
