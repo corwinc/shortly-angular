@@ -3,6 +3,7 @@
 // in our signup/signin forms using the injected Auth service
 angular.module('shortly.auth', [])
 
+
 .controller('AuthController', function ($scope, $window, $location, Auth) {
   $scope.user = {};
 

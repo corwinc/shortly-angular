@@ -5,12 +5,13 @@ angular.module('shortly.shorten', [])
   $scope.link = {};
   $scope.addLink = function() {
     console.log('link', $scope.link);
-    // why does this work for both returning Links.addOne AND w/o return?
-    // why does this work for tests?
-    // return Links.addOne(link)
-    // .then(function(resp) {
-    //   return resp;
-    // });
+    Links.addOne($scope.link)
+      .then(function() {
+        $location.path('/');
+      })
+      .catch(function() {
+        console.log(error);
+      })
   };
 
 });
